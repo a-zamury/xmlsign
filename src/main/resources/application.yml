@@ -1,0 +1,28 @@
+## YAML Template.
+---
+xml-mechanism: DOM
+
+signing-key:
+    alias: mykey
+    password: 123456
+    keystore:
+        type: PKCS12
+        name: /home/user/.keystore
+        password: 123456
+
+#signature-builder-class: com.example.xmlsign.DefaultSignatureBuilderImpl
+
+signature:
+    algorithm: http://www.w3.org/2009/xmldsig11#dsa-sha256
+#    params:
+    canonicalization:
+        algorithm: http://www.w3.org/2001/10/xml-exc-c14n#
+#        params:        
+    references:
+        - uri: 
+          digest:
+            algorithm: http://www.w3.org/2000/09/xmldsig#sha1
+#            params:
+          transforms:
+            - algorithm: http://www.w3.org/2000/09/xmldsig#enveloped-signature
+#              params:
